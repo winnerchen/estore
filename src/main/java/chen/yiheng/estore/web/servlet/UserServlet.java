@@ -5,8 +5,10 @@ import chen.yiheng.estore.service.UserService;
 import chen.yiheng.estore.utils.ApacheMailUtils;
 import chen.yiheng.estore.utils.MD5Utils;
 import chen.yiheng.estore.utils.MyFactory;
+import chen.yiheng.estore.utils.ProxyUtils;
 import org.apache.commons.beanutils.BeanUtils;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -102,6 +104,40 @@ public class UserServlet extends BaseServlet {
                 service.activeUser(existUser.getId());
                 return "/#login.jsp";
             }
+        }
+
+    }
+    public String login(HttpServletRequest request, HttpServletResponse response) {
+        User user = new User();
+        try {
+            BeanUtils.populate(user, request.getParameterMap());
+            user.setPassword(MD5Utils.md5(user.getPassword()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        UserService service = MyFactory.getInstance(UserService.class);
+        //UserService proxyService = new ProxyUtils<UserService>(service).getProxy();
+        User existUser = service.login(user);
+        if (existUser == null) {
+            request.setAttribute("login_error_msg", "用户名或密码错误");
+            return "/login.jsp";
+        } else {
+            if (existUser.getStatus() == 1) {
+                request.getSession().setAttribute("loginUser", existUser);
+                if (request.getParameter("remember") != null) {
+                    Cookie c = new Cookie("userInfo", user.getEmail() + "_"
+                            + user.getPassword());
+                    c.setMaxAge(3600 * 24);
+                    c.setPath("/");
+                    response.addCookie(c);
+                }
+                // logger.info("用户登录,用户的信息是: "+existUser);
+                return "/#index.jsp";
+            } else {
+                request.setAttribute("login_error_msg", "您未激活用户,请激活.");
+                return "/login.jsp";
+            }
+
         }
 
     }

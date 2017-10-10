@@ -42,4 +42,10 @@ public class UserServiceImpl implements UserService {
         UserDao dao = MyFactory.getInstance(UserDao.class);
         dao.activeUser(id);
     }
+
+    @Override
+    public User login(User user) {
+        UserDao dao = MyFactory.getInstance(UserDao.class);
+        return dao.findUserByEmailAndPwd(user);
+    }
 }

@@ -21,9 +21,16 @@
 					<div class="f_l left_login">
 						<script type="text/javascript" src="js/transport.js"></script>
 						<script type="text/javascript" src="js/utils.js"></script>
+				        <c:if test="${empty loginUser }">
+
 						<font id="ECS_MEMBERZONE"> 欢迎光临本店，<a href="login.jsp">登录</a>
 							| <a href="register.jsp">注册</a>
 						</font>
+                        </c:if>
+                        <c:if test="${not empty loginUser}">
+                            ${loginUser.nickname},欢迎您！
+                            <a href="${path}/userServlet?method=logout">退出</a>
+                        </c:if>
 					</div>
 					<ul class="top_bav_l">
 						<li class="top_sc">&nbsp;&nbsp;<a href="javascript:void(0);"

@@ -18,4 +18,6 @@ public interface UserDao {
     void activeUser(int id);
 
     void deleteUser(int id);
+
+    User findUserByEmailAndPwd(User user);
 }

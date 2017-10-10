@@ -82,4 +82,18 @@ public class UserDaoImpl implements UserDao {
             throw new RuntimeException("fail to delete user");
         }
     }
+
+    @Override
+    public User findUserByEmailAndPwd(User user) {
+        try {
+            QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+
+            String sql = "select * from users where email=? and password=?";
+            return  qr.query(sql, new BeanHandler<>(User.class),
+                    user.getEmail(),user.getPassword());
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException("");
+        }
+    }
 }
