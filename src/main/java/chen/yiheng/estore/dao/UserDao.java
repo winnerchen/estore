@@ -10,4 +10,12 @@ import chen.yiheng.estore.domain.User;
  */
 public interface UserDao {
     User findUserByEmail(String email);
+
+    void save(User user);
+
+    User findUserByActiveCode(String activeCode);
+
+    void activeUser(int id);
+
+    void deleteUser(int id);
 }

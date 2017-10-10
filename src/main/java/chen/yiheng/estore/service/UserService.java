@@ -10,4 +10,12 @@ import chen.yiheng.estore.domain.User;
  */
 public interface UserService {
     public User findUserByEmail(String email);
+
+    void save(User user);
+
+    User findUserByActiveCode(String activeCode);
+
+    void deleteUser(int id);
+
+    void activeUser(int id);
 }

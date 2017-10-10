@@ -18,4 +18,28 @@ public class UserServiceImpl implements UserService {
         UserDao dao = MyFactory.getInstance(UserDao.class);
         return dao.findUserByEmail(email);
     }
+
+    @Override
+    public void save(User user) {
+        UserDao dao = MyFactory.getInstance(UserDao.class);
+        dao.save(user);
+    }
+
+    @Override
+    public User findUserByActiveCode(String activeCode) {
+        UserDao dao = MyFactory.getInstance(UserDao.class);
+        return dao.findUserByActiveCode(activeCode);
+    }
+
+    @Override
+    public void deleteUser(int id) {
+        UserDao dao = MyFactory.getInstance(UserDao.class);
+        dao.deleteUser(id);
+    }
+
+    @Override
+    public void activeUser(int id) {
+        UserDao dao = MyFactory.getInstance(UserDao.class);
+        dao.activeUser(id);
+    }
 }

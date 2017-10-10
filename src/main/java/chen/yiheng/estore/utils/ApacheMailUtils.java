@@ -15,7 +15,7 @@ public class ApacheMailUtils {
 			email.setSmtpPort(465);
 			// account number and password
 			email.setAuthenticator(new DefaultAuthenticator("314323616@qq.com",
-					"ifoyizukingycaec"));
+					"yrtygfpezinlbgfi"));
 			email.setSSLOnConnect(true);
 			email.setFrom("314323616@qq.com");
 			email.setSubject(subject);

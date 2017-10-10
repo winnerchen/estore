@@ -26,8 +26,8 @@ public class BaseServlet extends HttpServlet{
                 Method method = this.getClass().getMethod(methodName, HttpServletRequest.class, HttpServletResponse.class);
                 String result= (String)method.invoke(this, req, resp);
                 if (result != null) {
-                    if (result.startsWith("/chen")) {
-                        result = result.substring(5);
+                    if (result.startsWith("/#")) {
+                        result = result.substring(2);
                         resp.sendRedirect(req.getContextPath() + "/" + result);
                     } else {
                         req.getRequestDispatcher(result).forward(req, resp);
