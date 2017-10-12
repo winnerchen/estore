@@ -67,7 +67,9 @@
 					</ul>
 					<div class="header_r">
 						<a href="orders.jsp">我的订单</a>
-						<a href="goods.jsp">商品列表</a>
+						<a href="${path}/goodsServlet?method=list">商品列表</a>
+						<a href="addgoods.jsp">商品添加</a>
+						<a href="${path}/totalSaleServlet?method=totalSale">商品销售榜单</a>
 					</div>
 				</div>
 			</div>

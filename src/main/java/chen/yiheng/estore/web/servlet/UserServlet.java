@@ -139,6 +139,15 @@ public class UserServlet extends BaseServlet {
             }
 
         }
+    }
 
+    public String logout(HttpServletRequest request, HttpServletResponse response) {
+        //clear cookie information
+        Cookie cookie = new Cookie("userInfo", "");
+        cookie.setPath("/");
+        cookie.setMaxAge(0);
+        response.addCookie(cookie);
+        request.getSession().removeAttribute("loginUser");
+        return "/#login.jsp";
     }
 }

@@ -30,8 +30,8 @@
 						<c:if test="${empty goodsList }">
 						<label>暂无商品</label>
 						</c:if>
-						<c:if test="${not empty goodsList }">
-						<c:forEach items="${goodsList }" var="good">
+						<c:if test="${not empty goodsList}">
+						<c:forEach items="${goodsList}" var="good">
 							<div class="goodsItem"  style="padding: 10px 4px 15px 1px;display: inline;">
 							<a href="${path}/goodsServlet?method=queryGoodsInfo&gid=${good.id}">
 						

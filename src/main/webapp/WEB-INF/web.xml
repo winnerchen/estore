@@ -45,7 +45,7 @@
     <servlet-name>UserServlet</servlet-name>
     <url-pattern>/userServlet</url-pattern>
   </servlet-mapping>
-  <!--<servlet>
+  <servlet>
     <description></description>
     <display-name>GoodsServlet</display-name>
     <servlet-name>GoodsServlet</servlet-name>
@@ -55,7 +55,7 @@
     <servlet-name>GoodsServlet</servlet-name>
     <url-pattern>/goodsServlet</url-pattern>
   </servlet-mapping>
-  <servlet>
+  <!--<servlet>
     <description></description>
     <display-name>CartServlet</display-name>
     <servlet-name>CartServlet</servlet-name>

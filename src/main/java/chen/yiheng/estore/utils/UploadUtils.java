@@ -22,7 +22,7 @@ public class UploadUtils {
 	}
 
 	// 获得随机UUID文件名
-	public static String generateRandonFileName(String fileName) {
+	public static String generateRandomFileName(String fileName) {
 		// 获得扩展名
 		// String ext = fileName.substring(fileName.lastIndexOf("."));
 		return UUID.randomUUID().toString() + "_" + fileName;
