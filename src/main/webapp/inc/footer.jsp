@@ -139,22 +139,7 @@
 			<a href="javascript:;">公司简介</a> <a href="javascript:;">批发方案</a>
 			<a href="javascript:;">配送方式</a>
 		</div>
-		<div class="record">
-			<p>&copy;版权所有 2006 - 2016 上海传智播客教育科技有限公司&nbsp;&nbsp;&nbsp;
-				地址：上海市航头镇航定路188号&nbsp;&nbsp;&nbsp;
-				邮编：100096
-				<span id="cnzz_stat_icon_4617777">
-					<a href="http://www.cnzz.com/stat/website.php?web_id=4617777" target="_blank" title="站长统计">
-						<img border="0" hspace="0" vspace="0" src="images/pic1.gif">
-					</a>
-				</span>
-				<br/>
-				电话：021-82935150/60/70&nbsp;&nbsp;&nbsp;
-				邮箱: tangpeng@itcast.cn&nbsp;&nbsp;&nbsp;
-				京ICP备08001421号&nbsp;&nbsp;&nbsp;
-				京公网安备110108007702
-			</p>
-		</div>
+
 	</div>
 	<div class="blank"></div>
 </div>
