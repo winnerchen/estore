@@ -26,4 +26,10 @@ public class GoodsServiceImpl implements GoodsService {
         GoodsDao goodsDao = MyFactory.getInstance(GoodsDao.class);
         goodsDao.addSingleGoods(good);
     }
+
+    @Override
+    public Good findGoodsById(int id) {
+        GoodsDao goodsDao = MyFactory.getInstance(GoodsDao.class);
+        return goodsDao.findGoodsById(id);
+    }
 }

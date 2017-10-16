@@ -5,7 +5,7 @@
 <HEAD>
 <title>欢迎您！十分抱歉，您要查看的网页当前已过期，或已被更名或删除！</title>
 <META http-equiv=Content-Type content="text/html; charset=utf-8">
-<meta http-equiv="refresh" content="10;URL=http://127.0.0.1:8080/Estore">
+<meta http-equiv="refresh" content="10;URL=http://127.0.0.1:8080/estore">
 <STYLE type=text/css>
 INPUT {FONT-SIZE: 12px}
 TD {FONT-SIZE: 12px}

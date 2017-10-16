@@ -104,4 +104,13 @@ public class GoodsServlet extends BaseServlet {
         }
 
     }
+
+    public String queryGoodsInfo(HttpServletRequest request, HttpServletResponse response) {
+        String id = request.getParameter("gid");
+        GoodsService service = MyFactory.getInstance(GoodsService.class);
+        Good goods = service.findGoodsById(Integer.parseInt(id));
+        request.setAttribute("current_good",goods);
+        return "/goods_detail.jsp";
+
+    }
 }

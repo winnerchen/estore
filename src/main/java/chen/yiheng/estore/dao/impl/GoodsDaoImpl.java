@@ -4,6 +4,7 @@ import chen.yiheng.estore.dao.GoodsDao;
 import chen.yiheng.estore.domain.Good;
 import chen.yiheng.estore.utils.JDBCUtils;
 import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
 import java.util.List;
@@ -38,6 +39,18 @@ public class GoodsDaoImpl implements GoodsDao {
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException("");
+        }
+    }
+
+    @Override
+    public Good findGoodsById(int id) {
+        try {
+            QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+            String sql = "select * from goods where id =? ";
+            return qr.query(sql, new BeanHandler<>(Good.class),id);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("查询商品列表异常!");
         }
     }
 }

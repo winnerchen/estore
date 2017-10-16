@@ -13,7 +13,7 @@
 	</div>
 	
 	<div>
-		<input onclick="location.href='/estore/goods.jsp';"
+		<input onclick="location.href='${path}/goodsServlet?method=list';"
 		type="button" value="继续购物" class="btn2" />&nbsp;&nbsp;&nbsp;
 		
 		<input onclick="location.href='/estore/cart.jsp';" 

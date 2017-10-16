@@ -55,7 +55,7 @@
     <servlet-name>GoodsServlet</servlet-name>
     <url-pattern>/goodsServlet</url-pattern>
   </servlet-mapping>
-  <!--<servlet>
+  <servlet>
     <description></description>
     <display-name>CartServlet</display-name>
     <servlet-name>CartServlet</servlet-name>
@@ -75,7 +75,7 @@
     <servlet-name>LoadCityServlet</servlet-name>
     <url-pattern>/loadCityServlet</url-pattern>
   </servlet-mapping>
-  <filter>
+  <!--<filter>
     <filter-name>ImageFilter</filter-name>
     <filter-class>chen.yiheng.estore.web.filter.ImageFilter</filter-class>
   </filter>

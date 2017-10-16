@@ -1,4 +1,24 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<script>
+	ajax({
+		url:"${path}/cartServlet?method=findGoodsCategoryNumByUid",
+		method:"get",
+		callback:function (data) {
+            var categoryNum = document.getElementById("cartnum");
+            categoryNum.innerHTML = parseInt(data);
+        }
+	});
+
+    function queryCart() {
+		if(${empty loginUser}){
+            alert("请先登录");
+            window.location.href = "login.jsp";
+        }else {
+            window.location.href = "${path}/cartServlet?method=queryCart";
+        }
+    }
+
+</script>
 <div id="Top">
 	<div class="tops"></div>
 	<div class=" block header_bg" style="margin-bottom:0px;">
@@ -94,8 +114,8 @@
 				<li id="ECS_CARTINFO">
 					<div class="top_cart">
 						<img src="themes/ecmoban_jumei/images/cart.gif" /> <span
-							class="carts_num none_f"><a href="cart.jsp" title="查看购物车">0</a></span>
-						<a href="cart.jsp" class="shopborder">去购物车结算</a>
+							class="carts_num none_f"><a href="cart.jsp" title="查看购物车" id="cartnum">0</a></span>
+						<a href="javascript:void(0)" class="shopborder" id="queryCart" onclick="queryCart()">去购物车结算</a>
 					</div>
 				</li>
 			</ul>

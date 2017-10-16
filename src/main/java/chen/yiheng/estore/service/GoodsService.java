@@ -15,4 +15,6 @@ public interface GoodsService {
     List<Good> findAllGoods();
 
     void addGoods(Good good);
+
+    Good findGoodsById(int i);
 }

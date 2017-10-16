@@ -14,4 +14,6 @@ public interface GoodsDao {
     List<Good> findAllGoods();
 
     void addSingleGoods(Good good);
+
+    Good findGoodsById(int id);
 }
